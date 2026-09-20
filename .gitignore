@@ -1,0 +1,41 @@
+# Rust
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# Node
+node_modules/
+dist/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local scientific data
+*.iq
+*.iq8
+*.cf32
+*.cfile
+*.wav
+*.bin
+*.pcap
+
+# Local databases / caches
+*.db
+*.sqlite
+*.sqlite3
+.cache/
+
+# Secrets
+.env
+.env.*
+!.env.example
