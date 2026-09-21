@@ -1,53 +1,53 @@
 # LEO Network
 
-**Red distribuida de observación, verificación y datos científicos**
+**Distributed Observation, Verification and Scientific Data Network**
 
-> Observar. Verificar. Probar. Contribuir.
+> Observe. Verify. Prove. Contribute.
 
-LEO Network es una arquitectura experimental abierta para una red distribuida de nodos físicos capaces de recopilar, verificar, correlacionar y publicar evidencias sobre objetos en órbita terrestre baja (LEO) y, potencialmente, sobre otros fenómenos científicos.
+LEO Network is an experimental open architecture for a distributed network of physical observation nodes capable of collecting, verifying, correlating and publishing evidence about low-Earth-orbit (LEO) objects and, potentially, other scientific phenomena.
 
-## Estado
+## Status
 
-**Concepto / diseño experimental — no preparado para producción.**
+**Concept / experimental design — not production ready.**
 
-La arquitectura, el protocolo, el modelo económico y el diseño del token están deliberadamente incompletos. Las mediciones con hardware real y las simulaciones deben preceder a las decisiones de producción.
+The architecture, protocol, economic model and token design are intentionally incomplete. Real hardware measurements and simulations must precede production decisions.
 
-## Principios fundamentales
+## Core principles
 
-- Ningún observador único.
-- Ningún validador único.
-- Ninguna base de datos única como única fuente de verdad.
-- Evidencia antes que conclusiones.
-- `UNKNOWN` es un resultado válido.
-- Correlación no implica causalidad.
-- Un error del sensor no es automáticamente fraude.
-- Los datos históricos forman parte de la verificación.
-- Los datos científicos pesados permanecen fuera de la cadena; los hashes y las atestaciones pueden anclarse en cadena.
-- Observación pasiva por diseño: medición y análisis, no interferencia ni control.
+- No single observer.
+- No single validator.
+- No single database as the only source of truth.
+- Evidence before conclusions.
+- `UNKNOWN` is a valid result.
+- Correlation is not causation.
+- Sensor error is not automatically fraud.
+- Historical data is part of verification.
+- Heavy scientific data stays off-chain; hashes and attestations can be anchored on-chain.
+- Passive observation by design: measurement and analysis, not interference or control.
 
-## El nodo LEO
+## The LEO Node
 
-**LEO Node = Observar + Verificar + Apostar + Ganar**
+**LEO Node = Observe + Verify + Stake + Earn**
 
-Cada nodo puede observar señales físicas, realizar autoverificaciones locales, verificar observaciones de otros nodos, mantener la procedencia criptográfica, aportar stake como garantía económica y recibir recompensas por trabajo útil y verificable de forma independiente.
+Each node can observe physical signals, perform local self-verification, verify observations from other nodes, maintain cryptographic provenance, stake value as an economic guarantee, and receive rewards for useful independently verifiable work.
 
-El objetivo conceptual actual de carga de trabajo es aproximadamente **75 % observación/autoverificación y 25 % verificación de terceros**. El protocolo final deberá hacer este parámetro configurable.
+The current conceptual workload target is approximately **75% observation/self-verification and 25% third-party verification**. The final protocol should make this parameter configurable.
 
-## Observación
+## Observation
 
-Una observación puede contener marca temporal, identidad de la estación, posición geográfica, frecuencia, ancho de banda, potencia recibida, SNR, desplazamiento Doppler, tasa de cambio Doppler, azimut/elevación, características espectrales, características de huella RF, configuración del receptor, contexto orbital y hash de evidencia.
+An observation may contain timestamp, station identity, geographic position, frequency, bandwidth, received power, SNR, Doppler shift, Doppler rate, azimuth/elevation, spectral features, RF fingerprint features, receiver configuration, orbital context and an evidence hash.
 
-Los IQ en bruto, FFT, espectrogramas y demás evidencias de gran tamaño deberían permanecer normalmente fuera de la cadena.
+Raw IQ, FFTs, spectrograms and other large evidence should normally remain off-chain.
 
-## Verificación
+## Verification
 
-La verificación puede combinar comprobaciones de calidad de señal, sincronización temporal, modelos orbitales como TLE/SGP4, comportamiento Doppler esperado, observaciones históricas, huellas RF, estaciones independientes cercanas y lejanas, y correlación temporal/espectral.
+Verification can combine signal-quality checks, time synchronization, orbital models such as TLE/SGP4, expected Doppler behaviour, historical observations, RF fingerprints, nearby and distant independent stations, and temporal/spectral correlation.
 
-La independencia es una propiedad del protocolo. Diez máquinas controladas por un mismo operador no deberían contar automáticamente como diez testigos independientes.
+Independence is a protocol property. Ten machines controlled by one operator should not automatically count as ten independent witnesses.
 
-## Estados epistémicos
+## Epistemic states
 
-Los estados posibles incluyen:
+Possible states include:
 
 - `UNKNOWN`
 - `OBSERVED`
@@ -59,133 +59,134 @@ Los estados posibles incluyen:
 - `ERROR`
 - `FRAUD_DEMONSTRATED`
 
-Una observación nunca debe verse obligada a adoptar la identidad de un satélite simplemente porque un modelo orbital sugiera una coincidencia.
+An observation must never be forced into a satellite identity merely because an orbital model suggests one.
 
 ## Proof of Useful Observation
 
-El concepto económico es **Proof of Useful Observation (PoUO)**. Los nodos no deberían ganar simplemente por producir grandes cantidades de datos; las recompensas deberían depender de la utilidad y verificabilidad de la contribución.
+The economic concept is **Proof of Useful Observation (PoUO)**. Nodes should not earn simply by producing large amounts of data; rewards should depend on useful, verifiable contribution.
 
-Función conceptual de recompensa:
+Conceptual reward function:
 
 `REWARD = quality × utility × novelty × independence × coverage × verifiability`
 
-Esto es una hipótesis de diseño, no una fórmula definitiva.
+This is a design hypothesis, not a finalized formula.
 
-## Stake y veracidad
+## Stake and veracity
 
-El stake actúa como garantía asociada a afirmaciones o trabajos de validación. Un trabajo correcto y verificado independientemente puede obtener recompensas; los errores normales del sensor o del algoritmo no deberían considerarse automáticamente fraude; un fraude demostrado conforme a las reglas del protocolo podría dar lugar a penalizaciones.
+Stake acts as a guarantee attached to claims or validation work. Correct independently verified work can earn rewards; ordinary sensor or algorithm errors should not automatically be treated as fraud; demonstrated protocol-defined fraud may result in penalties.
 
-## Red de datos científicos
+## Scientific data network
 
-La arquitectura puede extenderse más allá de la observación LEO hacia datos atmosféricos, meteorológicos, incendios, superficie terrestre, actividad solar/geomagnética y otros conjuntos de datos científicos disponibles públicamente.
+The architecture can extend beyond LEO observation to atmospheric, meteorological, fire, land-surface, solar/geomagnetic and other openly available scientific datasets.
 
-La red debería proporcionar procedencia, incertidumbre, reproducibilidad y herramientas de correlación.
+The network should provide provenance, uncertainty, reproducibility and correlation tools.
 
-**CORRELACIÓN ≠ CAUSALIDAD.**
+**CORRELATION ≠ CAUSATION.**
 
 ## Blockchain
 
-La dirección actual es una arquitectura **compatible con EVM**, con **Polygon** como ecosistema candidato.
+The current direction is an **EVM-compatible** architecture, with **Polygon** as the candidate ecosystem.
 
-Entre los contratos candidatos se incluyen `LEOToken`, `NodeRegistry`, `ObservationRegistry`, `VerificationRegistry`, `SatelliteRegistry`, `EvidenceRegistry`, `StakeManager`, `RewardManager`, `Reputation`, `ContributionRegistry`, `DisputeResolution` y `Governance`.
+Candidate contracts include `LEOToken`, `NodeRegistry`, `ObservationRegistry`, `VerificationRegistry`, `SatelliteRegistry`, `EvidenceRegistry`, `StakeManager`, `RewardManager`, `Reputation`, `ContributionRegistry`, `DisputeResolution` and `Governance`.
 
-El token y la arquitectura de contratos siguen siendo provisionales hasta que se hayan probado las hipótesis físicas y económicas.
+The token and contract architecture remain provisional until physical and economic assumptions have been tested.
 
-## Decisiones abiertas
+## Open Decisions
 
-Las siguientes decisiones siguen deliberadamente abiertas y no deben considerarse definidas todavía:
+The following decisions are deliberately open and should not yet be considered defined:
 
-- **Lenguaje de implementación:** TBD
-- **Licencia del proyecto:** TBD
-- **Red de despliegue:** TBD
-- **Modelo económico:** TBD
+- **Implementation language:** TBD
+- **Project license:** TBD
+- **Deployment network:** TBD
+- **Economic model:** TBD
 
-Estas decisiones se tomarán después de validar los requisitos técnicos, científicos y económicos del proyecto.
+These decisions will be made after the project's technical, scientific and economic requirements have been validated.
 
-## Lenguaje de implementación
+## Implementation language
 
-**Todavía no declarado.**
+**Not declared yet.**
 
-El proyecto no prescribe deliberadamente ningún lenguaje de programación en esta fase. El lenguaje o lenguajes de implementación se seleccionarán después de especificar suficientemente el protocolo, las interfaces y los requisitos del sistema.
+The project intentionally does **not** prescribe a programming language at this stage. The implementation language or languages will be selected after the protocol, interfaces and system requirements are sufficiently specified.
 
-Esto afecta a:
+This applies to:
 
-- Software del nodo LEO
-- Procesamiento de señales y cálculo científico
-- Componentes P2P/de red
-- Explorer/frontend
-- Smart contracts EVM
+- LEO node software
+- signal processing and scientific computation
+- P2P/network components
+- explorer/frontend
+- EVM smart contracts
 
-La elección se realizará a partir de requisitos y evidencia, no de una tecnología asumida de antemano.
+The choice will be made from evidence and requirements rather than assumed in the architecture.
 
-## Contribuciones y procedencia
+## Contributions and provenance
 
-El código, los algoritmos, los modelos, los conjuntos de datos, la documentación, los diseños de hardware, la investigación y los trabajos de validación deberían poder rastrearse mediante identificadores de contribución, autoría, relaciones padre/fork, hashes de Git, citas, evidencias de validación e historial de recompensas.
+Code, algorithms, models, datasets, documentation, hardware designs, research and validation work should be traceable through contribution IDs, authorship, parent/fork relationships, Git hashes, citations, validation evidence and reward history.
 
-Crear un fork por sí solo no debería generar una recompensa. La recompensa debería corresponder a una contribución útil y validada.
+Creating a fork alone should not generate a reward. Useful validated contribution should.
 
 ## LEO Explorer
 
-Un futuro Explorer debería mostrar trayectorias de satélites/objetos, observaciones, estado de verificación, evidencias, nodos de la red, datos históricos y anomalías.
+A future explorer should show satellite/object tracks, observations, verification state, evidence, network nodes, historical data and anomalies.
 
-Ejemplo:
+Example:
 
 `Observation #84721`
 
-- Objeto: `UNKNOWN-034`
-- Estación
-- Marca temporal
-- Frecuencia
+- Object: `UNKNOWN-034`
+- Station
+- Timestamp
+- Frequency
 - Doppler
 - SNR
-- Consistencia orbital
-- Observaciones independientes
-- Verificadores
+- Orbital consistency
+- Independent observations
+- Verifiers
 - Stake
-- Evidencia
-- Estado actual
+- Evidence
+- Current state
 
-## Arquitectura del nodo
+## Node architecture
 
-`Antena/Parabólica → LNB/Front-End RF → SDR → Procesamiento de señal → Motor de observación → Autoverificador → Capa P2P/Protocolo`
+`Antenna/Dish → LNB/RF Front-End → SDR → Signal Processing → Observation Engine → Self-Verifier → P2P/Protocol Layer`
 
-Esta es una arquitectura funcional, no una decisión sobre lenguaje o implementación.
+This is a functional architecture, not a language or implementation commitment.
 
-## Observación multiestación
+## Multi-station observation
 
-Las investigaciones futuras pueden incluir correlación cruzada, TDOA, FDOA, multilateración, mejora de la estimación orbital y confirmación independiente de señales.
+Future research may support cross-correlation, TDOA, FDOA, multilateration, improved orbit estimation and independent signal confirmation.
 
-Son objetivos de investigación, no garantías actuales.
+These are research targets, not current guarantees.
 
-## Ciencia reproducible
+## Reproducible science
 
-Las afirmaciones importantes deberían poder rastrearse mediante:
+Important claims should be traceable through:
 
-`evidencia bruta → procesamiento → observación → verificación → interpretación`
+`raw evidence → processing → observation → verification → interpretation`
 
-Debe preservarse la procedencia, las marcas temporales, las versiones de procesamiento/modelo, la configuración, la incertidumbre, el historial de verificación y los hashes.
+Preserve provenance, timestamps, processing/model versions, configuration, uncertainty, verification history and hashes.
 
-## Seguridad y uso responsable
+## Security and safety
 
-LEO Network está diseñado para la **observación pasiva**. El proyecto no requiere jamming, spoofing, control no autorizado de satélites ni interferencias.
+LEO Network is designed for **passive observation**. The project does not require jamming, spoofing, unauthorized satellite control or interference.
 
-## Fases de desarrollo
+## Development phases
 
-1. Arquitectura y protocolo
-2. Prototipo físico pasivo
-3. Verificación y correlación histórica
-4. Red distribuida de nodos
+1. Architecture and protocol
+2. Passive physical prototype
+3. Verification and historical correlation
+4. Distributed node network
 5. LEO Explorer
-6. Mediciones y simulaciones económicas
-7. Implementación EVM/blockchain
+6. Economic measurements and simulations
+7. EVM/blockchain implementation
 
-**No debería lanzarse ningún token de producción antes de probar experimentalmente las hipótesis físicas, de verificación y económicas.**
+**No production token should be launched before the physical, verification and economic assumptions have been experimentally tested.**
 
-## Estructura del repositorio
+## Repository structure
 
 ```text
 LEO-Network/
 ├── README.md
+├── README.es.md
 ├── .gitignore
 ├── docs/
 │   ├── ARCHITECTURE.md
@@ -201,8 +202,8 @@ LEO-Network/
 └── simulations/
 ```
 
-## Principio rector
+## Guiding principle
 
-> **La red no te pide que confíes en la observación. Te proporciona la evidencia para verificarla.**
+> **The network does not ask you to trust the observation. It gives you the evidence to verify it.**
 
-**Observar. Verificar. Probar. Contribuir.**
+**Observe. Verify. Prove. Contribute.**
