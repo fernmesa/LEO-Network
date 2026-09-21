@@ -91,6 +91,17 @@ Candidate contracts include `LEOToken`, `NodeRegistry`, `ObservationRegistry`, `
 
 The token and contract architecture remain provisional until physical and economic assumptions have been tested.
 
+## Decisiones abiertas
+
+Las siguientes decisiones siguen deliberadamente abiertas y no deben considerarse definidas todavía:
+
+- **Lenguaje de implementación:** TBD
+- **Licencia del proyecto:** TBD
+- **Red de despliegue:** TBD
+- **Modelo económico:** TBD
+
+Estas decisiones se tomarán después de validar los requisitos técnicos, científicos y económicos del proyecto.
+
 ## Implementation language
 
 **Not declared yet.**
