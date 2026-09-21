@@ -1,5 +1,11 @@
 # LEO Network Architecture
 
+## Architectural status
+
+The architecture is **language-agnostic** at this stage.
+
+No implementation language has been declared for the node, signal-processing stack, P2P layer, explorer or EVM smart contracts. Those decisions are intentionally deferred until the protocol and technical requirements are specified.
+
 ## Layers
 
 1. Physical: antenna/RF front-end, SDR, GNSS timing and host.
@@ -23,3 +29,21 @@ Large scientific payloads remain off-chain. Hashes, provenance and attestations 
 ## Epistemic principle
 
 `UNKNOWN` is a first-class state. The architecture must preserve uncertainty rather than force identification.
+
+## Technology-selection principle
+
+Technology choices must follow the requirements established by the protocol and experimental evidence.
+
+The future selection process should evaluate, at minimum:
+
+- performance and resource requirements;
+- SDR/DSP ecosystem maturity;
+- scientific-computing requirements;
+- P2P/networking requirements;
+- security and verification tooling;
+- maintainability;
+- deployment constraints;
+- EVM ecosystem requirements for smart contracts;
+- interoperability with the data and evidence model.
+
+Until that analysis is performed, specific languages remain **TBD**.
