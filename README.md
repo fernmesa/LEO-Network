@@ -91,6 +91,22 @@ Candidate contracts include `LEOToken`, `NodeRegistry`, `ObservationRegistry`, `
 
 The token and contract architecture remain provisional until physical and economic assumptions have been tested.
 
+## Implementation language
+
+**Not declared yet.**
+
+The project intentionally does **not** prescribe a programming language at this stage. The implementation language or languages will be selected after the protocol, interfaces and system requirements are sufficiently specified.
+
+This applies to:
+
+- LEO node software
+- signal processing and scientific computation
+- P2P/network components
+- explorer/frontend
+- EVM smart contracts
+
+The choice will be made from evidence and requirements rather than assumed in the architecture.
+
 ## Contributions and provenance
 
 Code, algorithms, models, datasets, documentation, hardware designs, research and validation work should be traceable through contribution IDs, authorship, parent/fork relationships, Git hashes, citations, validation evidence and reward history.
@@ -122,10 +138,7 @@ Example:
 
 `Antenna/Dish → LNB/RF Front-End → SDR → Signal Processing → Observation Engine → Self-Verifier → P2P/Protocol Layer`
 
-Reference implementation directions:
-
-- **Rust** for node services, DSP, orbital processing and P2P components.
-- **Solidity** for EVM smart contracts.
+This is a functional architecture, not a language or implementation commitment.
 
 ## Multi-station observation
 
